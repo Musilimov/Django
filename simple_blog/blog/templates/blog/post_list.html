@@ -10,15 +10,41 @@
     <ul>
         <p><a href="/users/">HOME</a></p>
 
-        {% for x in myposts %}
+        <!-- Форма для поиска постов -->
+        <form method="get" action="">
+            <input type="text" name="q" placeholder="Поиск..." value="{{ query|default:'' }}">
+            <input type="submit" value="Поиск">
+        </form>
+
+        {% if query %}
+            <p>Результаты поиска для "{{ query }}":</p>
+        {% endif %}
+
+        {% for post in page_obj %}
         <li>
-            <a href="details/{{ x.id }}">
-                <span style="font-weight: bold;">{{ x.title }}</span>
-                <span style="color: green; margin-left: 10px;">{{ x.created_at|date:"F j, Y, g:i a" }}</span>
+            <a href="{% url 'details' post.id %}">
+                <span style="font-weight: bold;">{{ post.title }}</span>
+                <span style="color: green; margin-left: 10px;">{{ post.created_at|date:"F j, Y, g:i a" }}</span>
             </a>
         </li>
         {% endfor %}
     </ul>
+
+    <div class="pagination">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1&q={{ query }}">&laquo; первая</a>
+                <a href="?page={{ page_obj.previous_page_number }}&q={{ query }}">предыдущая</a>
+            {% endif %}
+
+            <span>Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}&q={{ query }}">следующая</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}&q={{ query }}">последняя &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
 
     <h2>Create a New Post</h2>
     <form action="" method="post">
@@ -27,13 +53,4 @@
         <input type="submit" value="Submit">
     </form>
 
-    {% if post %}
-        <h2>Add Comment to: {{ post.title }}</h2>
-        <form method="post">
-            {% csrf_token %}
-            {{ comment_form.as_p }}  <!-- Убедитесь, что используете правильное имя формы для комментариев -->
-            <input type="submit" value="Save Changes">
-        </form>
-        <p>Back to <a href="{% url 'details' post.id %}">post details</a></p>
-    {% endif %}
 {% endblock %}

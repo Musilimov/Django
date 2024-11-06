@@ -6,9 +6,13 @@ from django.template import loader
 from .forms import PostForm,CommentForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.core.paginator import Paginator
 # Create your views here.
 
+from django.db.models import Q  # Для создания сложных запросов
+
 def list_all(request):
+    query = request.GET.get('q')  # Получаем запрос поиска
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
@@ -18,14 +22,26 @@ def list_all(request):
     else:
         form = PostForm()
 
-    posts = Post.objects.all().values()
-    template = loader.get_template('blog/post_list.html')
+    # Фильтрация постов по заголовку и содержимому
+    if query:
+        posts = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query))
+    else:
+        posts = Post.objects.all()
+
+    # Пагинация для найденных постов
+    paginator = Paginator(posts, 10)  # Указываем количество постов на странице
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'myposts': posts,
-        'form': form
+        'myposts': page_obj,
+        'form': form,
+        'page_obj': page_obj,
+        'query': query,  # Добавляем запрос в контекст для отображения в шаблоне
     }
 
-    return HttpResponse(template.render(context, request))
+    return render(request, 'blog/post_list.html', context)
+
 
 def single_post(request, id):
     post = get_object_or_404(Post, id=id)

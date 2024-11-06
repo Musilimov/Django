@@ -1,0 +1,35 @@
+{% extends "users/master.html" %}
+
+{% block content %}
+{% if user == profile.user %}
+<h2>{{ profile.user.username }}'s Profile</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label for="bio"><strong>Bio:</strong> </label>
+    <br>
+    <textarea id="bio" name="bio">{{ profile.bio }}</textarea>
+    <br>
+
+    <label for="profile_picture">Profile Picture</label>
+    <br>
+    <input type="file" name="profile_picture" id="profile_picture">
+    <br>
+
+    <button type="submit">Save changes</button>
+</form>
+
+{% if form.errors %}
+    <ul>
+        {% for field, errors in form.errors.items %}
+            {% for error in errors %}
+                <li>{{ field }}: {{ error }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endif %}
+<p><strong>Followers:</strong> {{ followers_count }}</p>
+<p><strong>Following:</strong> {{ following_count }}</p>
+{% endblock %}

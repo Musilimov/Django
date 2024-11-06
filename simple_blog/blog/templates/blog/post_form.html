@@ -1,0 +1,27 @@
+{% extends "blog/master.html" %}
+
+{% block title %}
+   List of all Items
+{% endblock %}
+
+
+{% block content %}
+  <h1>List of Posts</h1>
+
+  <ul>
+    <p><a href="/blog">HOME</a></p>
+
+    {% for x in myposts %}
+      <li><a href="details/{{ x.id }}">{{ x.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h2>Create a New Post</h2>
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+
+  </form>
+
+{% endblock %}

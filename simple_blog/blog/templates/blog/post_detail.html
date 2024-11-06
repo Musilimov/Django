@@ -1,0 +1,37 @@
+{% extends "blog/master.html" %}
+
+{% block title %}
+  Details about {{ mypost.title }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ mypost.title }} </h1>
+
+<p>Description: {{ mypost.content }}</p>
+<p>Creation date: {{ mypost.created_at }}</p>
+<p>Author: <a href="{% url 'profile' mypost.author %}">{{ mypost.author }}</a></p>
+
+<ul>
+{% for x in comments %}
+<li>
+  <a href="/blog/comment/{{ x.id }}">
+    <span style="font-weight: bold;">{{ x.author }}</span>
+    <span style="color: green; margin-left: 10px;">{{ x.created_at|date:"F j, Y, g:i a" }}</span>
+    <span style="color: gray; margin-left: 10px;">{{ x.content }}</span>
+  </a>
+</li>
+{% endfor %}
+</ul>
+
+{% if mypost.author == request.user %}
+<p><a href="{% url 'edit_post' mypost.id %}">Edit Post</a></p>
+
+<form action="{% url 'delete_post' mypost.id %}" method="post">
+  {% csrf_token %}
+  <input type="submit" value="Yes, delete">
+</form>
+{% endif %}
+<p><a href="{% url 'create_comment' mypost.id %}">Create Comment</a></p>
+
+<p>Back to <a href="{% url 'list_of_posts' %}">Blog List</a></p>
+{% endblock %}

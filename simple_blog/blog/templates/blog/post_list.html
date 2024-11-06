@@ -1,0 +1,39 @@
+{% extends "blog/master.html" %}
+
+{% block title %}
+    List of all Items
+{% endblock %}
+
+{% block content %}
+    <h1>List of Posts</h1>
+
+    <ul>
+        <p><a href="/users/">HOME</a></p>
+
+        {% for x in myposts %}
+        <li>
+            <a href="details/{{ x.id }}">
+                <span style="font-weight: bold;">{{ x.title }}</span>
+                <span style="color: green; margin-left: 10px;">{{ x.created_at|date:"F j, Y, g:i a" }}</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Create a New Post</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if post %}
+        <h2>Add Comment to: {{ post.title }}</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ comment_form.as_p }}  <!-- Убедитесь, что используете правильное имя формы для комментариев -->
+            <input type="submit" value="Save Changes">
+        </form>
+        <p>Back to <a href="{% url 'details' post.id %}">post details</a></p>
+    {% endif %}
+{% endblock %}

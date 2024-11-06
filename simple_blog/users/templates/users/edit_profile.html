@@ -1,0 +1,15 @@
+{% extends 'users/base.html' %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+<h2>Edit Profile</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="bio">Bio</label>
+    <textarea id="bio" name="bio">{{ profile.bio }}</textarea><br>
+    <label for="profile_picture">Profile Picture</label>
+    <input type="file" name="profile_picture" id="profile_picture"><br>
+    <button type="submit">Save changes</button>
+</form>
+{% endblock %}

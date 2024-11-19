@@ -1,0 +1,76 @@
+INFO 2024-11-16 02:29:24,016 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:30:44,139 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\users\views.py changed, reloading.
+INFO 2024-11-16 02:30:45,725 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:35:09,070 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:36:02,288 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\users\apps.py changed, reloading.
+INFO 2024-11-16 02:36:08,967 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:36:29,617 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\users\signals.py changed, reloading.
+INFO 2024-11-16 02:36:31,061 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:36:46,683 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\users\signals.py changed, reloading.
+INFO 2024-11-16 02:36:48,610 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:37:16,992 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\users\signals.py changed, reloading.
+INFO 2024-11-16 02:37:18,955 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:39:04,959 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\users\apps.py changed, reloading.
+INFO 2024-11-16 02:39:06,036 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:39:09,779 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:39:54,346 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\users\signals.py changed, reloading.
+INFO 2024-11-16 02:39:55,369 autoreload Watching for file changes with StatReloader
+WARNING 2024-11-16 02:40:11,139 log Not Found: /
+WARNING 2024-11-16 02:40:11,139 basehttp "GET / HTTP/1.1" 404 3672
+INFO 2024-11-16 02:40:20,112 basehttp "GET /api/auth/ HTTP/1.1" 200 10248
+INFO 2024-11-16 02:40:22,606 basehttp "GET /api/auth/users/ HTTP/1.1" 200 16619
+INFO 2024-11-16 02:41:43,759 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\ManagementSystem\settings.py changed, reloading.
+INFO 2024-11-16 02:41:44,823 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:42:06,389 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\ManagementSystem\settings.py changed, reloading.
+INFO 2024-11-16 02:42:07,442 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 02:47:31,142 autoreload Watching for file changes with StatReloader
+WARNING 2024-11-16 02:47:34,693 log Not Found: /
+WARNING 2024-11-16 02:47:34,693 basehttp "GET / HTTP/1.1" 404 3672
+WARNING 2024-11-16 02:47:35,764 log Not Found: /favicon.ico
+WARNING 2024-11-16 02:47:35,764 basehttp "GET /favicon.ico HTTP/1.1" 404 3723
+INFO 2024-11-16 02:47:54,717 basehttp "GET /api/auth/ HTTP/1.1" 200 10248
+INFO 2024-11-16 02:47:58,538 basehttp "GET /api/auth/users/ HTTP/1.1" 200 16619
+INFO 2024-11-16 15:08:27,089 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 15:08:40,168 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\ManagementSystem\__init__.py changed, reloading.
+INFO 2024-11-16 15:08:41,889 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 15:08:49,400 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\ManagementSystem\settings.py changed, reloading.
+INFO 2024-11-16 15:08:50,706 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 15:09:41,218 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\ManagementSystem\settings.py changed, reloading.
+INFO 2024-11-16 15:09:42,783 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 15:09:55,507 autoreload Watching for file changes with StatReloader
+INFO 2024-11-16 15:30:23,246 views User admin logged in.
+WARNING 2024-11-16 15:30:23,252 log Method Not Allowed: /api/courses/
+INFO 2024-11-16 15:30:24,038 views User user logged in.
+WARNING 2024-11-16 15:30:24,038 log Method Not Allowed: /api/courses/
+INFO 2024-11-16 15:35:28,411 views User admin logged in.
+INFO 2024-11-16 15:35:28,892 views User admin logged in.
+INFO 2024-11-16 15:35:29,357 views User admin logged in.
+INFO 2024-11-16 15:35:29,362 views Student Updated Name's profile updated.
+INFO 2024-11-16 15:37:41,902 views User admin logged in.
+INFO 2024-11-16 15:37:42,426 views User admin logged in.
+INFO 2024-11-16 15:37:42,891 views User admin logged in.
+INFO 2024-11-16 15:37:42,896 views Student Updated Name's profile updated.
+INFO 2024-11-16 15:37:44,081 views User admin logged in.
+INFO 2024-11-16 15:37:44,786 views User user logged in.
+INFO 2024-11-16 15:38:50,736 views User admin logged in.
+INFO 2024-11-16 15:38:51,234 views User admin logged in.
+INFO 2024-11-16 15:38:51,709 views User admin logged in.
+INFO 2024-11-16 15:38:51,750 views Student Updated Name's profile updated.
+INFO 2024-11-16 15:38:52,920 views User admin logged in.
+INFO 2024-11-16 15:38:53,632 views User user logged in.
+INFO 2024-11-16 15:42:57,067 autoreload Watching for file changes with StatReloader
+INFO 2024-11-17 16:33:52,557 autoreload Watching for file changes with StatReloader
+INFO 2024-11-17 16:53:58,347 autoreload Watching for file changes with StatReloader
+INFO 2024-11-17 16:59:41,918 autoreload Watching for file changes with StatReloader
+INFO 2024-11-17 16:59:59,304 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\ManagementSystem\settings.py changed, reloading.
+INFO 2024-11-17 17:00:00,729 autoreload Watching for file changes with StatReloader
+INFO 2024-11-17 17:00:22,161 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\ManagementSystem\urls.py changed, reloading.
+INFO 2024-11-17 17:00:23,084 autoreload Watching for file changes with StatReloader
+INFO 2024-11-17 17:00:33,386 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\ManagementSystem\urls.py changed, reloading.
+INFO 2024-11-17 17:00:34,309 autoreload Watching for file changes with StatReloader
+INFO 2024-11-17 17:00:37,088 autoreload C:\Users\HUAWEI\Desktop\Student Management System Project\ManagementSystem\ManagementSystem\urls.py changed, reloading.
+INFO 2024-11-17 17:00:37,991 autoreload Watching for file changes with StatReloader
+WARNING 2024-11-17 17:00:40,394 log Unauthorized: /
+WARNING 2024-11-17 17:00:40,394 basehttp "GET / HTTP/1.1" 401 9904
+WARNING 2024-11-17 17:00:46,641 log Not Found: /league/create/
+WARNING 2024-11-17 17:00:46,641 basehttp "GET /league/create/ HTTP/1.1" 404 5676

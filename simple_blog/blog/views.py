@@ -29,7 +29,7 @@ def list_all(request):
         posts = Post.objects.all()
 
     # Пагинация для найденных постов
-    paginator = Paginator(posts, 10)  # Указываем количество постов на странице
+    paginator = Paginator(posts, 2)  # Указываем количество постов на странице
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
